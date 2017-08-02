@@ -2,20 +2,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  case ENV['RAILS']
-  when '5_1'
-    gem 'railties', '5.1.2'
-    gem 'actionpack', '5.1.2'
-  when '5'
-    gem 'railties', '5.0.2'
-    gem 'actionpack', '5.0.2'
-  when '4'
-    gem 'railties', '~> 4.2'
-    gem 'actionpack', '~> 4.2'
-  else
-    gem 'railties'
-    gem 'actionpack'
-  end
+  gem 'railties'
+  gem 'actionpack'
 
   gem 'sdoc', '~> 0.4.1'
   gem 'pry', '~> 0.10.1'
