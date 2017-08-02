@@ -3,12 +3,9 @@ gemspec
 
 group :development do
   case ENV['RAILS']
-  when '5_1_2'
+  when '5_1'
     gem 'railties', '5.1.2'
     gem 'actionpack', '5.1.2'
-  when '5_1'
-    gem 'railties', '5.1.0'
-    gem 'actionpack', '5.1.0'
   when '5'
     gem 'railties', '5.0.2'
     gem 'actionpack', '5.0.2'
