@@ -59,7 +59,7 @@ module Telegram
           when 404 then raise NotFound, err_msg
           end
         end
-        # raise Error, "#{status} ----- #{res.reason}: #{err_msg}"
+        raise Error
       end
 
       # Splited to the sections similar to API docs.
