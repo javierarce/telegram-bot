@@ -52,14 +52,15 @@ module Telegram
         return JSON.parse(res.body) if 300 > status
         result = JSON.parse(res.body) rescue nil # rubocop:disable RescueModifier
         err_msg = result && result['description'] || '-'
-        if result
-          # This errors are raised only for valid responses from Telegram
-          case status
-          when 403 then raise Forbidden, err_msg
-          when 404 then raise NotFound, err_msg
+        begin
+          if result
+            case status
+            when 403 then raise Forbidden, err_msg
+            when 404 then raise NotFound, err_msg
+            end
           end
+        rescue Exception
         end
-        raise Error
       end
 
       # Splited to the sections similar to API docs.
